@@ -1,0 +1,125 @@
+body {
+    background-color: rgb(236, 216, 219);
+    margin: 0 10%;
+    font-family: sans-serif;
+    /*background-image: linear-gradient(red, orange);*/
+
+    /* these will reset other properties, like background-position, but it does know what you mean */
+    /*background: red;*/
+    background:rgb(197, 183, 159);
+}
+
+/* rgb(218, 177, 177) */
+h1 {
+    color: rgb(103, 107, 128);
+    text-align: center;
+    font-family: Arial;
+    font-weight: normal;
+    text-transform: lowercase;
+    margin-top: 30px;
+}
+  
+h2 {
+    color: rgb(103, 107, 128);
+    font-weight: normal;
+    font-size: 1.5em;
+}
+
+h3 {
+    font-weight: normal;
+    color: rgb(103, 107, 128)
+}
+
+h4 {
+    text-align: center;
+    background-color: rgba(99, 114, 143, 0.534);
+    border: 1px solid #c2ddf0;
+    font-family: Arial;
+    font-weight: normal;
+    color: rgb(79, 80, 87);
+}
+
+mark {
+    text-align: center;
+    background-color: #ffe291
+}
+
+bottombar {
+    position: fixed;
+    z-index: 100; 
+    bottom: 0; 
+    left: 0;
+    width: 100%;
+}
+
+nav {
+    text-align: center;
+    display: block;
+    padding: 8px;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited { 
+    text-decoration: none; 
+}
+
+.nav{
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+.nav li{
+    display:inline;
+}
+.nav a{
+    display:inline-block;
+    padding-left:60px;
+    padding-right:60px;
+}
+
+li a {
+    display: block;
+    color: #382828;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+  
+li a:visited {
+    color:#382828;
+}
+
+img {
+    border-color: rgb(214, 215, 219);
+}
+
+.container {
+    display: grid;
+    align-items: center; 
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5px;
+}
+   
+img {
+    max-width: 100%;
+    max-height:100%;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+   
+.text {
+    font-size: default;
+}
+
+funfact {
+    color: rgb(255, 255, 255);
+}
