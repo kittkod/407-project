@@ -1,0 +1,35 @@
+Initial list:
+</p>
+<ul id="myUL">
+    <li>Here </li>
+    <li>is </li>
+    <li>some </li>
+    <li>text.</li>
+</ul>
+
+<hr />
+<p>
+Content gathered:
+</p>
+<p id="list">
+</p>
+
+<p id="savedText"></p>
+<p id="openedText"></p>
+<input type="text" id="input"/> 
+<button onclick="save()">SAVE</button>
+
+<script> 
+var storedItem = localStorage.getItem("storedItem")
+
+function save(){
+   var item = document.getElementById("input").value;
+   localStorage.setItem("storedItem", item);
+   document.getElementById("savedText").innerHTML = item + " saved";
+}
+
+function get(){
+    localStorage.getItem("storedItem");
+    document.getElementById("openedText").innerHTML = storedItem + " opened";
+}
+</script>
