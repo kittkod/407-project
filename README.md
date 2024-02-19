@@ -5,4 +5,4 @@ how to run
 ----------
 programmer instructions: download repository and open the index.html file
 
-user instructions: open https://kittkod.github.io/407-project/index.html 
+user instructions: open https://kittkod.github.io/407-project 
