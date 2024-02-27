@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Recipie Repo</title>
+        <link rel="stylesheet" href="stuff.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <!--<script>$(function() { alert('hello') });</script>-->
+        <style>
+            Header {
+              display:block;
+              background-color:#ddd;
+              padding: 50px;
+              font-size: 30px;
+            }  
+        </style>
+    </head>
+    <body background='back.png'>
+        <script src="test.js"></script>
+        <!-- name & heading 
+        <br/><br/>
+        <h1>Recipie Repo &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;<a href="./index.html">home</a></h1>
+        <div class="nav-bar"></div>
+        <br/></br>
+        <h2>my recipies:</h2>-->
+        <!-- printing list of recipies 
+        <ul>
+        <li><h3><a href="./recipie1.html">lasagna</a></h3></li>
+        <li><h3>garlic bread</h3></li>
+        </ul>
+
+        <br/></br>
+        <br/></br></br>-->
+
+        <!-- add new recipie 
+        <button type="button"><a href="./recipieform.html">Add New Recipie!</a></button>
+
+        <script src="./idkjava.js"></script>-->
+        <!-- personal info footnote bar
+        <bottombar><h4>&ensp;&ensp;&ensp;&ensp;created by 
+            Jasmine Wallin @2024</h4></bottombar>-->
+            <br/></br><br/></br></br><br/></br><br/></br></br><br/></br><br/></br></br>
+            <header>Header</header>
+            <!--<script> set() </script>-->
+        
+            <table>
+                <tr>
+                    <td><input type="text" name="item_name" placeholder="item name" /></td>
+                    <td><select name="item_type"><option value="" selected="selected">Type</option></select></td>
+        
+                </tr>
+                <tr>
+                    <td><input type="text" name="item_name" placeholder="item name" /></td>
+                    <td><select name="item_type"><option value="" selected="selected">Type</option></select></td>
+                </tr>
+                <tr>
+                    <td colspan="2" id="add">+ Add new item</td>
+                </tr>
+            </table>
+            <script>
+                
+                $('#add').on('click',function(e){
+                    var $this = $(this);
+                    var $newRow = $this.closest('table').find('tr:first').clone();
+                    $newRow.find(':input').val('');
+                    $newRow.insertBefore($this.parent());
+                    
+                });
+    
+            </script>
+            <!--<script> save()</script>-->
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+    </body>
+</html>
+
