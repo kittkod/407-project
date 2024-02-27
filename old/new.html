@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    body {
+      font: 400 16px/1.5 Verdana;
+    }
+    
+    [type=checkbox] {
+      display: none;
+    }
+    
+    #chx0:checked~.card-0 {
+      display: none;
+    }
+    
+    #chx1:checked~.card-1 {
+      display: none;
+    }
+    
+    #chx2:checked~.card-2 {
+      display: none;
+    }
+    
+    label,
+    input {
+      font-family: Consolas;
+      font-variant: small-caps;
+      font-size: 20px;
+      display: block;
+      cursor: pointer;
+    }
+    
+    label {
+      min-height: 30px;
+      background: rgba(0, 200, 0, 0.4);
+      text-align: center;
+      padding-top: 8px;
+    }
+    
+    code {
+      font-family: Courier New;
+      background: rgba(121, 45, 121, 0.2);
+    }
+    
+    kbd {
+      border: 2px outset grey;
+      border-radius: 8px;
+      padding: 2px 4px;
+      font-family: Verdana;
+    }
+    
+    footer {
+      height: 90px;
+    }
+    
+    summary h3 {
+      display: inline-block;
+      cursor: pointer;
+      margin: 10px auto;
+    }
+  </style>
+</head>
+
+<body>
+  <details>
+    <summary>
+      <h3>CSS</h3>
+    </summary>
+    <ul>
+      <li>Click one of the <code>&lt;fieldset&gt;s</code> and it disappears because...
+        <ul>
+          <li>
+            there's a nested <code>&lt;label&gt; [for="ID-of-Input"]</code> linked to an...
+          </li>
+          <li>
+            invisible <code>&lt;input id="ID-of-Input"&gt; [type=checkbox]</code>
+          </li>
+        </ul>
+      </li>
+      <li>
+        A click on a <code>&lt;label&gt;</code> will be a click on its linked input
+      </li>
+      <li>
+        By using the pseudo-class selector <code>:checked</code> and the general sibling combinator <code>~</code> the "younger" siblings are now subject to a switch that can manipulate CSS dramatically around them and on them. In the demo, each invisible
+        checkbox will hide a specific <code>.card</code>.
+      </li>
+    </ul>
+  </details>
+  <details>
+    <summary>
+      <h3>jQuery</h3>
+    </summary>
+    <ul>
+      <li>
+        Basically CSS is used to remove the targets and jQuery is used tp keep the current state of certain elements persistant.
+      </li>
+      <li>
+        In the demo an <code>each()</code> will loop through the checkbox <code>#id</code>s and pass them through <code>getData()</code> function as keys. If any values of '1' are found, the checkbox <code>#id</code> that corresponds with the key gets
+        checked.
+      </li>
+    </ul>
+  </details>
+  <h3>Instructions</h3>
+  <p><kbd>Reload</kbd> this page and the cards that are gone continue to be so. In order to remove the data from <code>localStorage</code>, click the <kbd>Clear</kbd> button.</p>
+  <hr>
+
+  <input id='chx0' class='chx' type='checkbox'>
+  <input id='chx1' class='chx' type='checkbox'>
+  <input id='chx2' class='chx' type='checkbox'>
+
+  <fieldset class='card-0 card' data-id='chx0'>
+    <label for='chx0'>Card 0</label>
+  </fieldset>
+  <hr>
+  <fieldset class='card-1 card' data-id='chx1'>
+    <label for='chx1'>Card 1</label>
+  </fieldset>
+  <hr>
+  <fieldset class='card-2 card' data-id='chx2'>
+    <label for='chx2'>Card 2</label>
+  </fieldset>
+
+  <input class='reload' type='button' value='Reload' style='float:left; margin:5px 10px 20px 0; width:20ch;background:cyan;color:#000'>
+  <input class='clear' type='button' value='Clear' style='float:right; margin:5px 10px 20px 0; width:20ch;background:tomato;color:#fff'>
+
+  <footer>&nbsp;</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    var data;
+
+    $('.chx').each(function(i, c) {
+      var key = this.id;
+      data = getData(key);
+      console.log(data);
+      if (data === '1') {
+        this.checked = true;
+      }
+    });
+
+    $(".chx").on('click', function() {
+      var key = this.id;
+      var val = this.checked ? '1' : '0';
+      setData(key, val);
+    });
+
+    function getData(key) {
+      data = localStorage.getItem(key);
+      if (data === null) {
+        return false;
+      } else {
+        return data;
+      }
+    }
+
+    function setData(key, value) {
+
+      if (key === undefined || value === undefined) {
+        return false;
+      } else {
+        localStorage.setItem(key, value);
+        return true;
+      }
+    }
+
+    $('.reload').on('click', function() {
+      location.reload(true);
+    });
+
+    $('.clear').on('click', function() {
+      localStorage.clear();
+    });
+  </script>
+</body>
+
+</html>
+
+
+
+$('#add').on('click',function(e){
+  var $this = $(this);
+  var $newRow = $this.closest('table').find('tr:first').clone();
+  $newRow.find(':input').val('');
+  $newRow.insertBefore($this.parent());
+  setData(this.id)
+});

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+<body>
+    <h2> The localStorage Object. </h2>
+    <p> The setItem() method saves data to local storage. </p>
+    <div id="poop"> </div>
+    <div id="output"> </div>
+    <input class='clear' type='button' value='test :3' style='float:right; margin:5px 10px 20px 0; width:20ch;background:tomato;color:#fff'>
+    <script type="text/javascript">
+
+       let output = document.getElementById( "output" );
+       let poop = document.getElementById("poop");
+       let key = "RowHTML";
+       let HTMLcontent = " <div style='color: red; font -size:20px;'>TutorialsPoint</div> ";
+ 
+       // store content to local storage
+       let x = localStorage.setItem(key, HTMLcontent);
+ 
+       // get item from local storage
+       let result = localStorage.getItem(key);
+       output.innerHTML ="The saved HTML content: " + result;
+
+       $('.clear').on('click', function() {
+        let res2 = localStorage.getItem("RowHTML");
+        output.innerHTML = res2;
+    });
+    </script>
+</body>
+
+</html>
